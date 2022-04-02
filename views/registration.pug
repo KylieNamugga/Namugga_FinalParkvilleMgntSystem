@@ -1,0 +1,100 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='/bootstrap-5.1.3-dist/css/bootstrap.css')
+  link(rel='stylesheet' href='/css/registration.css')
+  title Client Registration
+.ka-container
+  .title
+    span Client Registration Form
+  form#form.row.g-3(name='clientRegistration' method='POST' action='/registration')
+    .col-md-6
+      label.form-label(for='inputname') Full Name
+      input#inputFullname.form-control(type='text' name='fullname')
+    .col-6
+      label.form-label(for='inputcontact') Phone Number
+      input#inputContact.form-control(type='text' name='phonenumber')
+    .col-6
+      label.form-label(for='inputniN') NIN
+      input#inputniN.form-control(type='text' name='nin')
+    .col-md-6
+      label.form-label(for='inputnumberPlate') Number Plate
+      input#inputnumberPlate.form-control(type='text' name='numberplate')
+    .col-md-6
+      label.form-label(for='inputFor') Vehicle Type
+      select#inputFor.form-select(type='text' name='vehicletype')
+        option(selected='') choose Vehicle type
+        option(value='Personal car') Personal car
+        option(value='Taxi') Taxi
+        option(value='Boda Boda') Boda Boda
+        option(value='Coaster') Coaster
+        option(value='Truck') Truck
+    .col-md-6
+      label.form-label(for='inputService') Service
+      select#inputService.form-select(type='text' name='service')
+        option(selected='') Choose Client Service
+        option(value='Parking') Parking
+        option(value='Battery Hire') Battery Hire
+        option(value='Puncture Fix') Puncture Fix
+        option(value='Tyre Pressure') Tyre Pressure
+        option(value='Valves') Valves
+    .col-md-6
+      label.form-label(for='inputPrice') Service Fee
+      select#inputPrice.form-select(type='text' name='servicefee')
+        option(selected='') Choose service Fee
+        option(value='10,000Ugx') 10,000Ugx
+        option(value='5,000Ugx') 5,000Ugx
+        option(value='4,000Ugx') 4,000Ugx
+        option(value='3,000Ugx') 3,000Ugx
+        option(value='2,000ugx') 2,000Ugx
+        option(value='1,000Ugx') 1,000Ugx
+        option(value='500Ugx') 500Ugx
+        option(value='As Per Unit') As Per Unit
+    .col-md-6
+      label.form-label(for='inputTime') Vehicle Model
+      input#inputmodel.form-control(type='text' name='vehiclemodel')
+    .col-md-6
+      label.form-label(for='inputTime') Colour
+      input#inputcolour.form-control(type='text' name='colour')
+    .col-md-6
+      label.form-label(for='inputDate') Date
+      input#inputdate.form-control(type='date' name='date')
+    .col-md-6
+      label.form-label(for='inputTime') Time Of Arrival
+      input#inputtime.form-control(type='time' name='arrivaltime')
+    .col-md-6
+      label.form-label(for='inputGender') Gender
+      select#inputGender.form-select(type='text' name='gender')
+        option(selected='') Choose Gender
+        option(value='Female') Female
+        option(value='Male') Male
+        option(value='Other') Other
+    .col-md-6
+      label.form-label(for='inputTime') Battery Price
+      input#inputBatprice.form-control(type='text' name='batteryprice')
+    .col-md-6
+      label.form-label(for='inputDuration') Battery Size
+      select#inputDuration.form-select(type='text' name='batterysize')
+        option(selected='') Choose Battery Size
+        option(value='Small') Small
+        option(value='Medium') Medium
+        option(value='Large') Large
+        option(value='X-Large') X-Large
+        option(value='Non-applicable') Non-applicable
+    .col-md-6
+      label.form-label(for='inputTime') Tyre Price
+      input#inputBatprice.form-control(type='text' name='tyreprice' placeholder='')
+    .col-md-6
+      label.form-label(for='inputTime') Tyre Size
+      select#inputDuration.form-select(type='text' name='tyresize')
+        option(selected='') Choose Tyre Size
+        option(value='Small') Small
+        option(value='Medium') Medium
+        option(value='Large') Large
+        option(value='X-Large') X-Large
+        option(value='Non-applicable') Non-applicable
+    .col-12
+      button.btn.btn-primary(type='submit' value='Submit' name='') Register Client 
+link(rel='stylesheet' href='/bootstrap-5.1.3-dist/js/bootstrap.js')

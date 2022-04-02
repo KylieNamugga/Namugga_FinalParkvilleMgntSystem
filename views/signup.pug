@@ -1,0 +1,41 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Sign Up form
+  link(rel='stylesheet' href='/css/signup.css')
+.wrapper
+  h2 New Manager Sign Up Form
+  form(name='registration' method='POST' action='/signup' onsubmit='return validateSignUp();')
+    label.form-label(for='inputTime') First Name
+    .input-box
+      input#firstname(type='text' name='firstname')
+      div
+        small#fNameError
+    label.form-label(for='inputTime') Last Name
+    .input-box
+      input#lastname(type='text' name='lastname')
+    div
+      small#lNameError
+    label.form-label(for='inputTime') Email
+    .input-box
+      input#email(type='text' name='email')
+    div
+      small#emailError
+    label.form-label(for='inputTime') Password
+    .input-box
+      input#password(type='password' name='password')
+    div
+      small#passwordError
+    label.form-label(for='inputTime') Confirm Password 
+    .input-box
+      input#pass(type='password' name='pass')
+    div
+      small#passError
+    .input-box.button
+      input(type='Submit' value='Add New Manager')
+    .text
+      h3
+        | Already have an account? 
+        a(href='/logins') Login now
+script(src='/js/validation.js')

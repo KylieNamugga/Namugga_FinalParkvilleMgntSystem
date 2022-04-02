@@ -1,0 +1,103 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.wrapper {
+	width: 1170px;
+	margin: auto;
+}
+header {
+	background: linear-gradient(rgba(0, 0, 0, 0.596), rgba(0, 0, 0, 0.52)), url(/img/landing5edit.jpg);
+	height: 100vh;
+	background-size: cover;
+	background-position: center;
+	position: relative;
+}
+.nav-area {
+	float: right;
+	list-style: none;
+	margin-top: 30px;
+}
+.nav-area li {
+	display: inline-block;
+}
+.nav-area li a {
+	color:  white;
+    border-radius: 10px;
+	text-decoration: none;
+	padding: 5px 20px;
+	font-family: poppins;
+	font-size: 16px;
+	text-transform: uppercase;
+}
+.nav-area li a:hover {
+	background: lightblue;
+	color: #333;
+}
+
+.welcome-text {
+	position: absolute;
+	width: 600px;
+	height: 300px;
+	margin: 20% 30%;
+	text-align: center;
+}
+.welcome-text h1 {
+	text-align: center;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 60px;
+}
+.welcome-text h1 span {
+	color:  white;
+    font-weight: bold;
+}
+.welcome-text a {
+	border: 3px solid #fff;
+    border-radius: 10px;
+	padding: 10px 25px;
+	text-decoration: none;
+	text-transform: uppercase;
+    font-weight: bolder;
+	font-size: 20px;
+	margin-right: 30px;
+	margin-top: 20px;
+	display: inline-block;
+	color: #fff;
+}
+.welcome-text a:hover {
+	background: lightskyblue;
+	color: #333;
+}
+/*How do I make you resposive bambi?*/
+
+@media (max-width:600px) {
+	.wrapper {
+		width: 100%;
+	}
+	img {
+		width: 80%;
+	}
+	.nav-area {
+		float: none;
+		margin-top: 0;
+	}
+	.nav-area li a {
+		padding: 5px;
+		font-size: 11px;
+	}
+	.nav-area {
+		text-align: center;
+	}
+	.welcome-text {
+		width: 100%;
+		height: auto;
+		margin: 30% 0;
+	}
+	.welcome-text h1 {
+		font-size: 30px;
+	}
+}

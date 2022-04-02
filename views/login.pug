@@ -1,0 +1,28 @@
+doctype html
+head
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Login Form
+  link(rel='stylesheet' href='/css/login.css')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css')
+.container
+  .wrapper
+    .title
+      span Login Form
+    form(name='registration' method='POST' action='/logIn' onsubmit='return validateLogIn();')
+      .row
+        i.fas.fa-user
+        input#email(type='text' name='email' placeholder='email')
+        div
+          small#emailError
+      .row
+        i.fas.fa-lock
+        input#password(type='password' name='password' placeholder='Password')
+        div
+          small#passwordError
+      .row.button
+        input(type='submit' value='Login')
+      .signup-link
+        | Don&apos;t have an account? 
+        a(href='/signup') Signup now
+script(src='/js/loginValidation.js')

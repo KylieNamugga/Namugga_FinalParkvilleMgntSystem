@@ -1,0 +1,38 @@
+body{
+    margin-left:23%;
+    width: 50%;
+    padding: 20px;
+    margin-bottom: 30px;
+    background-color: rgba(0,0,0,0.15);
+  }
+
+   .ka-container{
+        max-width: 700px;
+        width: 100%;
+        background-color: #fff;
+        /* padding: 25px 30px; */
+        border-radius: 5px;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.15)
+  } 
+
+  #form{
+    padding: 25px 30px; 
+  }
+ 
+  #butt{
+      float: left;
+  }
+  
+  .ka-container .title{
+    height: 70px;
+    background:   #4070f4;
+    border-radius: 5px 5px 0 0;
+    color: #fff;
+    font-size: 30px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  
