@@ -12,13 +12,13 @@ head
   p.logo PARKVILLE
   a.icon-a(href='/registration')
     i.fa.fa-users.icons
-    | Register New Client
-  a.icon-a(href='/signup')
-    i.fa.fa-user.icons
-    | Register New manager
-  a.icon-a(href='#')
+    |  Register New Client
+  a.icon-a(href='/signoff')
+    i.fa.fa-car.icons
+    |  Client Sign Off 
+  a.icon-a(href='/report')
     i.fa.fa-list-alt.icons
-    |  Receipts
+    |  Reports
   #logout.div
     a.icon-a(href='/logout')
       i.fa.fa-power-off(aria-hidden='true')
@@ -96,10 +96,8 @@ head
                 td #{registration.service}
                 td #{registration.vehicletype}
                 td #{registration.servicefee} 
-              // icons
-              td
-                div
-                  
+                td
+                  div
                   a(href='/registration')
                     button.kylie(title='edit')
                       i.bi.bi-pencil(style='color: white;')

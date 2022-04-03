@@ -7,7 +7,7 @@ router.get('/login', (req, res) => {
 	res.render('login')
 });
 
-router.post('/login', passport.authenticate('local', { failureRedirect: '/logins' }), (req, res) => {
+router.post('/login', passport.authenticate('local', { failureRedirect: '/login' }), (req, res) => {
 	console.log("This is the login data", req.body)
 	req.session.user = req.user
 	res.redirect('/dashboard');

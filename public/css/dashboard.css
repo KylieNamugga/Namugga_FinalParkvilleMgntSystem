@@ -297,6 +297,8 @@ th {
   border-radius: 5px;
   background-color: #5646ff;
   border: none;
+  margin: 5px;
+  width: 20%;
 }
 
 .modal-body{

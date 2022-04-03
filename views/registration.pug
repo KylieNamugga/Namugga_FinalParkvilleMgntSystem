@@ -25,7 +25,7 @@ head
     .col-md-6
       label.form-label(for='inputFor') Vehicle Type
       select#inputFor.form-select(type='text' name='vehicletype')
-        option(selected='') choose Vehicle type
+        option(selected='') Choose Vehicle type
         option(value='Personal car') Personal car
         option(value='Taxi') Taxi
         option(value='Boda Boda') Boda Boda
@@ -41,17 +41,16 @@ head
         option(value='Tyre Pressure') Tyre Pressure
         option(value='Valves') Valves
     .col-md-6
-      label.form-label(for='inputPrice') Service Fee
+      label.form-label(for='inputPrice') Parking Fee
       select#inputPrice.form-select(type='text' name='servicefee')
-        option(selected='') Choose service Fee
-        option(value='10,000Ugx') 10,000Ugx
-        option(value='5,000Ugx') 5,000Ugx
-        option(value='4,000Ugx') 4,000Ugx
-        option(value='3,000Ugx') 3,000Ugx
-        option(value='2,000ugx') 2,000Ugx
-        option(value='1,000Ugx') 1,000Ugx
-        option(value='500Ugx') 500Ugx
-        option(value='As Per Unit') As Per Unit
+        option(selected='') Select '0' if not required
+        option(value='10000') 10,000Ugx
+        option(value='5000') 5,000Ugx
+        option(value='4000') 4,000Ugx
+        option(value='3000') 3,000Ugx
+        option(value='2000') 2,000Ugx
+        option(value='1000U') 1,000Ugx
+        option(value='500') 0,00Ugx
     .col-md-6
       label.form-label(for='inputTime') Vehicle Model
       input#inputmodel.form-control(type='text' name='vehiclemodel')
@@ -73,7 +72,13 @@ head
         option(value='Other') Other
     .col-md-6
       label.form-label(for='inputTime') Battery Price
-      input#inputBatprice.form-control(type='text' name='batteryprice')
+      select#inputPrice.form-select(type='number' name='batteryprice')
+        option(selected='') Select '0' if not required
+        option(value='10000') 10,000Ugx
+        option(value='5000') 5,000Ugx
+        option(value='4000') 4,000Ugx
+        option(value='3000') 3,000Ugx
+        option(value='0') 0,00Ugx
     .col-md-6
       label.form-label(for='inputDuration') Battery Size
       select#inputDuration.form-select(type='text' name='batterysize')
@@ -85,7 +90,11 @@ head
         option(value='Non-applicable') Non-applicable
     .col-md-6
       label.form-label(for='inputTime') Tyre Price
-      input#inputBatprice.form-control(type='text' name='tyreprice' placeholder='')
+      select#inputPrice.form-select(type='number' name='tyreprice')
+        option(selected='') Select '0' if not required
+        option(value='5000') 5,000Ugx
+        option(value='500') 500Ugx
+        option(value='0') 0,00Ugx
     .col-md-6
       label.form-label(for='inputTime') Tyre Size
       select#inputDuration.form-select(type='text' name='tyresize')

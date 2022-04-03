@@ -22,6 +22,8 @@ const loginRoutes = require('./routes/loginRoutes');
 const registrationRoutes = require('./routes/registrationRoutes');
 const signupRoutes = require('./routes/signupRoutes');
 const dashboardRoutes = require('./routes/dashboardRoutes');
+const signoffRoutes = require('./routes/signoffRoutes');
+const reportRoutes = require('./routes/reportRoutes');
 // post route variable for my sign up form is similar to the get route variable 
 // because they are in the same file
 
@@ -83,6 +85,8 @@ app.use('/', loginRoutes);
 app.use('/', registrationRoutes);
 app.use('/', signupRoutes);
 app.use('/', dashboardRoutes);
+app.use ('/', signoffRoutes);
+app.use('/', reportRoutes);
 
 
 // This should always be the last route after all other routes are excecuted.

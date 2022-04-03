@@ -26,7 +26,7 @@ const registrationSchema = mongoose.Schema({
         required: true
     },
     servicefee:{
-        type: String,
+        type: Number,
         required: true
     },
     vehiclemodel:{
@@ -50,7 +50,7 @@ const registrationSchema = mongoose.Schema({
         required: true
     },
     batteryprice:{
-        type: String,
+        type: Number,
         required: true
     },
     batterysize:{
@@ -58,7 +58,7 @@ const registrationSchema = mongoose.Schema({
         required: true
     },
     tyreprice:{
-        type: String,
+        type: Number,
         required: true
     },
     tyresize:{
