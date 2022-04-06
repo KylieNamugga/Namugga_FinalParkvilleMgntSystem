@@ -301,12 +301,26 @@ th {
   width: 20%;
 }
 
-.modal-body{
+.namu{
+  border-radius: 5px;
   font-weight: bold;
-  color: black;
+  float: right;
+  margin-right: 70px;
+  background-color:#5646ff;
+  color:white;
+  border: none;
+  font-size: 18px;
 }
 
-.modal-header{
+.namugga{
+  border-radius: 5px;
   font-weight: bold;
-  color: black;
+  float: left;
+  margin-right: 70px;
+  background-color:#5646ff;
+  color:white;
+  border: none;
+  font-size: 18px;
+  margin-right: 2px;
+  margin-top: 2px;
 }

@@ -12,7 +12,16 @@ head
     .box-8
       .content-box
         p
-          | Customer Details 
+          | Customer Details
+          button.namu(onclick='window.print()') Print Report
+          a(href='/dashboard')
+                    button.namugga(title='Back to Dashboard')
+                      i.bi.bi-person-square(style='color: white;')
+           
+          
+           
+
+
           
         br
         table
@@ -26,7 +35,7 @@ head
             th receipt 
             th Time 
             th Gender
-            th Admin Action
+            //- th Admin Action
           tbody
             if signoffs.length 
             each signoff in signoffs 
@@ -39,32 +48,29 @@ head
                 td #{signoff.receiptnumber}
                 td #{signoff.time}
                 td #{signoff.gender}
-                td 
-                  a(href='/report')
-                    button.kylie(title='Print')
-                      i.bi.bi-printer(style='color: white;')
-                  // Button trigger modal
-                  button.kylie(type='button' data-bs-toggle='modal' data-bs-target='#staticBackdrop')
-                    i.bi.bi-trash3(style='color: white;')
-                  // Modal
-                  #staticBackdrop.modal.fade(data-bs-backdrop='static' data-bs-keyboard='false' tabindex='-1' aria-labelledby='staticBackdropLabel' aria-hidden='true')
-                    .modal-dialog
-                      .modal-content
-                        .modal-header
-                          h5#staticBackdropLabel.modal-title
-                            | Delete Client
-                            | Entry
-                          button.btn-close(type='button' data-bs-dismiss='modal' aria-label='Close')
-                        .modal-body
-                          | Deleting will permanently erase this Client&apos;s Details.
-                          br
-                          |                                                         Do you want to continue?
-                        .modal-footer
-                          button.btn.btn-primary(type='button' data-bs-dismiss='modal') No
-                          button.btn.btn-danger(type='button') Delete
-                  a(href='/dashboard')
-                    button.kylie(title='Dashboard')
-                      i.bi.bi-person-square(style='color: white;')
+                //- td 
+                //-   // Button trigger modal
+                //-   button.kylie(type='button' data-bs-toggle='modal' data-bs-target='#staticBackdrop')
+                //-     i.bi.bi-trash3(style='color: white;')
+                //-   // Modal
+                //-   #staticBackdrop.modal.fade(data-bs-backdrop='static' data-bs-keyboard='false' tabindex='-1' aria-labelledby='staticBackdropLabel' aria-hidden='true')
+                //-     .modal-dialog
+                //-       .modal-content
+                //-         .modal-header
+                //-           h5#staticBackdropLabel.modal-title
+                //-             | Delete Client
+                //-             | Entry
+                //-           button.btn-close(type='button' data-bs-dismiss='modal' aria-label='Close')
+                //-         .modal-body
+                //-           | Deleting will permanently erase this Client&apos;s Details.
+                //-           br
+                //-           |                                                         Do you want to continue?
+                //-         .modal-footer
+                //-           button.btn.btn-primary(type='button' data-bs-dismiss='modal') No
+                //-           button.btn.btn-danger(type='button') Delete
+                //-   a(href='/dashboard')
+                //-     button.kylie(title='Dashboard')
+                //-       i.bi.bi-person-square(style='color: white;')
 
 
 script(src='/js/dashboard.js')

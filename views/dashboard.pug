@@ -86,7 +86,9 @@ head
               th Customer Name
               th Service Type
               th Vehicle
-              th Fee
+              th Parking Fee 
+              th Battery Fee 
+              th Tyre Fee
               th Admin Actions
           tbody
               if registrations.length 
@@ -96,29 +98,14 @@ head
                 td #{registration.service}
                 td #{registration.vehicletype}
                 td #{registration.servicefee} 
+                td #{registration.batteryprice} 
+                td #{registration.tyreprice} 
                 td
-                  div
-                  a(href='/registration')
-                    button.kylie(title='edit')
-                      i.bi.bi-pencil(style='color: white;')
-                  // Button trigger modal
-                  button.kylie(type='button' data-bs-toggle='modal' data-bs-target='#staticBackdrop')
-                    i.bi.bi-trash3(style='color: white;')
-                  // Modal
-                  #staticBackdrop.modal.fade(data-bs-backdrop='static' data-bs-keyboard='false' tabindex='-1' aria-labelledby='staticBackdropLabel' aria-hidden='true')
-                    .modal-dialog
-                      .modal-content
-                        .modal-header
-                          h5#staticBackdropLabel.modal-title
-                            | Delete Client
-                            | Entry
-                          button.btn-close(type='button' data-bs-dismiss='modal' aria-label='Close')
-                        .modal-body
-                          | Deleting will permanently erase this Client&apos;s Details.
-                          br
-                          |                                                         Do you want to continue?
-                        .modal-footer
-                          button.btn.btn-primary(type='button' data-bs-dismiss='modal') No
-                          button.btn.btn-danger(type='button') Delete
-              // end icon
+                  
+                  form(method="get" action="/deleteuser/"+registration._id)
+                    console.log(#{registration._id})
+                    input(type="hidden" name="delete" value=registration._id)
+                    button.btn.btn-primary(type='button' data-bs-toggle='modal' data-bs-target='#staticBackdrop' style='background-color:blue; margin-right: 5px;') Edit
+                    button.btn.btn-danger(type='submit') Delete
+
 script(src='/js/dashboard.js')

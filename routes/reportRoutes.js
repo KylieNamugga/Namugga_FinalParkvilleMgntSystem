@@ -9,7 +9,7 @@ router.get('/report', async(req,res)=>{
     // to pick data from the 
     try {
         // helps return all the members in the collection clients
-        const data = await Signoff.find({});
+        const data = await Signoff.find({}).sort({$natural:-1});
         console.log('>>>>>> all signoffs',data);
         // gives us the file dash and come with the client data or client has same info with data
         // the registrations is what we call in pug
