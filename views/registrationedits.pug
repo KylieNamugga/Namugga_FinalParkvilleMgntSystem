@@ -1,0 +1,110 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='/bootstrap-5.1.3-dist/css/bootstrap.css')
+  link(rel='stylesheet' href='/css/registration.css')
+  title Client Registration
+.ka-container
+  if registration 
+  .title
+    span Client Registration Form
+  form#form.row.g-3(name='clientRegistration' method='POST' action='/update?id='+registration._id)
+    .col-md-6
+      label.form-label(for='inputname') Full Name
+      input#inputFullname.form-control(type='text' name='fullname' value= registration.fullname)
+    .col-6
+      label.form-label(for='inputcontact') Phone Number
+      input#inputContact.form-control(type='text' name='phonenumber' value=registration.phonenumber)
+    .col-6
+      label.form-label(for='inputniN') NIN
+      input#inputniN.form-control(type='text' name='nin' value=registration.nin)
+    .col-md-6
+      label.form-label(for='inputnumberPlate') Number Plate
+      input#inputnumberPlate.form-control(type='text' name='numberplate' value=registration.numberplate)
+    .col-md-6
+      label.form-label(for='inputFor') Vehicle Type
+      select#inputFor.form-select(type='text' name='vehicletype')
+        option(selected='') Choose Vehicle type
+        option(value='Personal car' selected=registration.vehicletype==='Personal Car') Personal car
+        option(value='Taxi' selected=registration.vehicletype==='Taxi') Taxi
+        option(value='Boda Boda' selected=registration.vehicletype==='Boda Boda') Boda Boda
+        option(value='Coaster' selected=registration.vehicletype==='Coaster') Coaster
+        option(value='Truck' selected=registration.vehicletype==='Truck') Truck
+    .col-md-6
+      label.form-label(for='inputService') Service
+      select#inputService.form-select(type='text' name='service')
+        option(selected='') Choose Client Service
+        option(value='Parking' selected=registration.service==='Parking') Parking
+        option(value='Battery Hire' selected=registration.service==='Battery Hire') Battery Hire
+        option(value='Puncture Fix' selected=registration.service==='Puncture Fix') Puncture Fix
+        option(value='Tyre Pressure' selected=registration.service==='Tyre Pressure') Tyre Pressure
+        option(value='Valves' selected=registration.service==='Valves') Valves
+    //- .col-md-6
+    //-   label.form-label(for='inputPrice') Parking Fee
+    //-   select#inputPrice.form-select(type='number' name='servicefee')
+    //-     option(selected='') Select '0' if not required
+    //-     option(value='10000' selected=registration.servicefee==='10000') 10,000Ugx
+    //-     option(value='5000' selected=registration.servicefee==='5000') 5,000Ugx
+    //-     option(value='4000' selected=registration.sevicefee==='4000') 4,000Ugx
+    //-     option(value='3000' selected=registration.servicefee==='3000') 3,000Ugx
+    //-     option(value='2000' selected=registration.servicefee==='2000') 2,000Ugx
+    //-     option(value='1000' selected=registration.servicefee==='1000') 1,000Ugx
+    //-     option(value='0' selected=registration.servicefee==='Boda Boda') 0,00Ugx
+    //- .col-md-6
+    //-   label.form-label(for='inputvehiclemodel') Vehicle Model
+    //-   input#inputmodel.form-control(type='text' name='vehiclemodel' value=registration.vehiclemodel)
+    //- .col-md-6
+    //-   label.form-label(for='inputcolour') Colour
+    //-   input#inputcolour.form-control(type='text' name='colour' value=registration.colour)
+    //- .col-md-6
+    //-   label.form-label(for='inputDate') Date
+    //-   input#inputdate.form-control(type='date' name='date' value=registration.date)
+    //- .col-md-6
+      label.form-label(for='inputTime') Time Of Arrival
+      input#inputtime.form-control(type='time' name='arrivaltime' value=registration.arrivaltime)
+    //- .col-md-6
+    //-   label.form-label(for='inputGender') Gender
+    //-   select#inputGender.form-select(type='text' name='gender')
+    //-     option(selected='') Choose Gender
+    //-     option(value='Female' selected=registration.gender==='Female') Female
+    //-     option(value='Male' selected=registration.gender==='Male') Male
+    //-     option(value='Other' selected=registration.gender==='Other') Other
+    //- .col-md-6
+    //-   label.form-label(for='inputTime') Battery Price
+    //-   select#inputPrice.form-select(type='number' name='batteryprice')
+    //-     option(selected='') Select '0' if not required
+    //-     option(value='10000' selected=registration.batteryprice==='10000') 10,000Ugx
+    //-     option(value='5000' selected=registration.batteryprice==='5000') 5,000Ugx
+    //-     option(value='4000' selected=registration.batteryprice==='4000') 4,000Ugx
+    //-     option(value='3000' selected=registration.batteryprice==='3000') 3,000Ugx
+    //-     option(value='0' selected=registration.batteryprice==='0') 0,00Ugx
+    //- .col-md-6
+    //-   label.form-label(for='inputDuration') Battery Size
+    //-   select#inputDuration.form-select(type='text' name='batterysize')
+    //-     option(selected='') Choose Battery Size
+    //-     option(value='Small' selected=registration.batterysize==='Small') Small
+    //-     option(value='Medium' selected=registration.batterysize==='Medium') Medium
+    //-     option(value='Large' selected=registration.batterysize==='Large') Large
+    //-     option(value='X-Large' selected=registration.batterysize==='X-Large') X-Large
+    //-     option(value='Non-applicable' selected=registration.batterysize==='Non-applicable') Non-applicable
+    //- .col-md-6
+    //-   label.form-label(for='inputTime') Tyre Price
+    //-   select#inputPrice.form-select(type='number' name='tyreprice')
+    //-     option(selected='') Select '0' if not required
+    //-     option(value='5000' selected=registration.tyreprice==='5000') 5,000Ugx
+    //-     option(value='500' selected=registration.tyreprice==='500') 500Ugx
+    //-     option(value='0' selected=registration.tyreprice==='0') 0,00Ugx
+    //- .col-md-6
+    //-   label.form-label(for='inputTime') Tyre Size
+    //-   select#inputDuration.form-select(type='text' name='tyresize')
+    //-     option(selected='') Choose Tyre Size
+    //-     option(value='Small' selected=registration.tyresize==='Small') Small
+    //-     option(value='Medium' selected=registration.tyresize==='Medium') Medium
+    //-     option(value='Large' selected=registration.tyresize==='Large') Large
+    //-     option(value='X-Large' selected=registration.tyresize==='X-Large') X-Large
+    //-     option(value='Non-applicable' selected=registration.tyresize==='Non-applicable') Non-applicable
+    .col-12
+      button.btn.btn-primary(type='submit') Edit Client Info
+//- link(rel='stylesheet' href='/bootstrap-5.1.3-dist/js/bootstrap.js')

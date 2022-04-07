@@ -10,7 +10,7 @@ router.get('/dashboard', async(req,res)=>{
     try {
         // helps return all the members in the collection clients
         const data = await Registration.find({}).sort({$natural:-1});
-        console.log('>>>>>> all registrations',data);
+        // console.log('>>>>>> all registrations',data);
         // gives us the file dashboard and come with the registration data.
         // the registrations is what we call in pug
         res.render('dashboard', {registrations : data})
@@ -34,6 +34,25 @@ router.get('/deleteuser/:id',async (req, res) => {
     //  the deletion has not happened
    res.status(400).send('unable to delete user')
   }
+});
+
+//UPDATE USER
+router.get("/update/:id", async (req, res) => {
+    try {
+      const updateUser = await Registration.findOne({ _id: req.params.id })
+      res.render('registrationedits', { registration: updateUser })
+    } catch (error) {
+      res.status(400).send("unable to find the user in the database");
+    }
+});
+
+router.post("/update/", async (req, res) => {
+    try {
+      await Registration.findOneAndUpdate({ _id: req.query.id }, req.body)
+      res.redirect("/dashboard");
+    } catch (error) {
+      res.status(400).send("unable to update registration");
+    }
 });
 
 module.exports = router;

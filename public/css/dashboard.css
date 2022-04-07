@@ -91,10 +91,11 @@ body {
   float: left;
   font-weight: bold;
 }
+
  .profile {
   display: inline-block;
   width: 200px;
-  float: right;
+  margin-left:60%;
 } 
 
 
@@ -320,7 +321,20 @@ th {
   background-color:#5646ff;
   color:white;
   border: none;
-  font-size: 18px;
+  font-size: 20px;
+  margin-right: 2px;
+  margin-top: 2px;
+}
+
+.namuggas{
+  border-radius: 5px;
+  font-weight: bold;
+  float: left;
+  margin-right: 70px;
+  background-color:red;
+  /* color:white; */
+  border: none;
+  font-size: 20px;
   margin-right: 2px;
   margin-top: 2px;
 }

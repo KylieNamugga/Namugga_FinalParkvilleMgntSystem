@@ -68,7 +68,7 @@ head
     #box2.box-1
       .content-box-1
         p.head-1
-          | Daily Income
+          | Price List
           span 3/11/2021
         div
           span#money Ugx 0
@@ -83,29 +83,30 @@ head
         table
           thead
             tr
-              th Customer Name
+              th Name
+              th Number Plate
               th Service Type
-              th Vehicle
-              th Parking Fee 
-              th Battery Fee 
-              th Tyre Fee
+              th Time 
+              th Date 
+              th Service Fee
               th Admin Actions
           tbody
               if registrations.length 
               each registration in registrations
                 tr
                 td #{registration.fullname}
+                td #{registration.numberplate}
                 td #{registration.service}
-                td #{registration.vehicletype}
+                td #{registration.arrivaltime} 
+                td #{registration.date} 
                 td #{registration.servicefee} 
-                td #{registration.batteryprice} 
-                td #{registration.tyreprice} 
                 td
-                  
+                  a(href='/update/'+registration._id)
+                    button.namugga(title='Edit')
+                      i.bi.bi-pencil(style='color: white;')
                   form(method="get" action="/deleteuser/"+registration._id)
                     console.log(#{registration._id})
                     input(type="hidden" name="delete" value=registration._id)
-                    button.btn.btn-primary(type='button' data-bs-toggle='modal' data-bs-target='#staticBackdrop' style='background-color:blue; margin-right: 5px;') Edit
-                    button.btn.btn-danger(type='submit') Delete
-
+                    button.namuggas(type='submit')
+                      i.bi.bi-trash(style='color: white;')
 script(src='/js/dashboard.js')
