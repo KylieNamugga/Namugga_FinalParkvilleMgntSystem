@@ -25,7 +25,7 @@ head
     .col-md-6
       label.form-label(for='inputFor') Vehicle Type
       select#inputFor.form-select(type='text' name='vehicletype')
-        option(selected='') Choose Vehicle type
+        option(value='Default' selected='') Choose Vehicle type
         option(value='Personal car') Personal car
         option(value='Taxi') Taxi
         option(value='Boda Boda') Boda Boda
@@ -34,7 +34,7 @@ head
     .col-md-6
       label.form-label(for='inputService') Service
       select#inputService.form-select(type='text' name='service')
-        option(selected='') Choose Client Service
+        option(value='Default' selected='') Choose Client Service
         option(value='Parking') Parking
         option(value='Battery Hire') Battery Hire
         option(value='Puncture Fix') Puncture Fix
@@ -42,8 +42,8 @@ head
         option(value='Valves') Valves
     .col-md-6
       label.form-label(for='inputPrice') Parking Fee
-      select#inputPrice.form-select(type='text' name='servicefee')
-        option(selected='') Select '0' if not required
+      select#inputPrice.form-select(type='number' name='servicefee')
+        option(value='Default' selected='') Select '0' if not required
         option(value='10000') 10,000Ugx
         option(value='5000') 5,000Ugx
         option(value='4000') 4,000Ugx
@@ -66,14 +66,14 @@ head
     .col-md-6
       label.form-label(for='inputGender') Gender
       select#inputGender.form-select(type='text' name='gender')
-        option(selected='') Choose Gender
+        option(value='Default' selected='') Choose Gender
         option(value='Female') Female
         option(value='Male') Male
         option(value='Other') Other
     .col-md-6
       label.form-label(for='inputTime') Battery Price
       select#inputPrice.form-select(type='number' name='batteryprice')
-        option(selected='') Select '0' if not required
+        option(value='Default' selected='') Select '0' if not required
         option(value='10000') 10,000Ugx
         option(value='5000') 5,000Ugx
         option(value='4000') 4,000Ugx
@@ -82,7 +82,7 @@ head
     .col-md-6
       label.form-label(for='inputDuration') Battery Size
       select#inputDuration.form-select(type='text' name='batterysize')
-        option(selected='') Choose Battery Size
+        option(value='Default' selected='') Choose Battery Size
         option(value='Small') Small
         option(value='Medium') Medium
         option(value='Large') Large
@@ -91,14 +91,14 @@ head
     .col-md-6
       label.form-label(for='inputTime') Tyre Price
       select#inputPrice.form-select(type='number' name='tyreprice')
-        option(selected='') Select '0' if not required
+        option(value='Default' selected='') Select '0' if not required
         option(value='5000') 5,000Ugx
         option(value='500') 500Ugx
         option(value='0') 0,00Ugx
     .col-md-6
       label.form-label(for='inputTime') Tyre Size
       select#inputDuration.form-select(type='text' name='tyresize')
-        option(selected='') Choose Tyre Size
+        option(value='Default' selected='') Choose Tyre Size
         option(value='Small') Small
         option(value='Medium') Medium
         option(value='Large') Large

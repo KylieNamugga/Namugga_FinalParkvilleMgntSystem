@@ -9,7 +9,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    /* background: white; I hate how white looks  */
     background: linear-gradient(rgba(0, 0, 0, 0.596), rgba(0, 0, 0, 0.52)), url(/img/landing5edit.jpg);
     background-size: cover;
     background-position: center;

@@ -6,22 +6,17 @@ const mongoose = require('mongoose')
 
 router.use(expressValidator());
 
-// requiring schema
+// Requiring schema
 const Registration = require('../models/registrationmodel')
 
-// handling the get route
-
+//The get route
 router.get('/registration', (req, res) => {
     res.render('registration');
- });
+});
 
-//handles fetching client data from the db to populate the table
-
-
-// route for posting
+// Posting route
 router.post('/registration', (req, res) => {
-    // declare variables that match your form input names
-    // we assign them to req because we are requesting node js to forward data
+    //Kylie, declare variables that match your form input names
     const fullname = req.body.fullname;
     const phonenumber = req.body.phonenumber;
     const nin = req.body.nin;
@@ -64,15 +59,14 @@ router.post('/registration', (req, res) => {
             tyresize: tyresize
 
         });
-        // saving
+        // Saving
         newRegistration.save((err) => {
             if (err) {
                 console.error(err);
                 return;
             }
             else {
-                req.flash('sucess', 'yay! You have successfully registered this customer.')
-                console.log('Kylie, you have successfully registered your first client');
+                console.log('Kylie, you have successfully registered your First client');
                 res.redirect('/dashboard')
             }
         })

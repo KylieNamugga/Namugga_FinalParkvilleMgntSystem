@@ -38,7 +38,7 @@ router.post('/signup', async (req, res) => {
             });
 
             await Signup.register(newSignup, req.body.password, (err) => {
-                if(err){ //Register method has an inbuilt encryption
+                if(err){ 
                     throw error;
                 }
                 res.redirect('/login');

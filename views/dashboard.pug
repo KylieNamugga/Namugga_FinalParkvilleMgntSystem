@@ -1,7 +1,6 @@
 doctype html
 head
   link(rel='stylesheet' href='/bootstrap-5.1.3-dist/css/bootstrap.css')
-  //- script(rel='stylesheet' href='/bootstrap-5.1.3-dist/js/bootstrap.bundle.js')
   script(src="/bootstrap-5.1.3-dist/js/bootstrap.bundle.js") 
   link(rel='stylesheet' href='/css/dashboard.css')
   link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css')
@@ -38,23 +37,18 @@ head
   .col-div-4-1
     .box
       p.head-1 Parking
-      if registrations.length 
-      each registration in registrations
-             #{registration.servicefee}  
+      p #{new Intl.NumberFormat().format(total.totalParking)}Ugx 
       i.fa.fa-car.box-icon
   .col-div-4-1
     .box
       p.head-1 Tyres
-      if registrations.length 
-      each registration in registrations
-             #{registration.tyreprice}
+      p #{new Intl.NumberFormat().format(total.totalTyrePrice)}Ugx 
       i.fa.fa-life-ring.box-icon
   .col-div-4-1
     .box
       p.head-1 Battery
-      if registrations.length 
-      each registration in registrations
-             #{registration.batteryprice} 
+      p #{new Intl.NumberFormat().format(total.totalBatteryPrice)}Ugx 
+
       i.fa.fa-plus-square.box-icon
   .clearfix
   br
@@ -68,10 +62,11 @@ head
     #box2.box-1
       .content-box-1
         p.head-1
-          | Price List
+          | Top Performer
           span 3/11/2021
+          
         div
-          span#money Ugx 0
+          span#money Ugx 0   
   .clearfix
   br
   // My table
@@ -88,7 +83,9 @@ head
               th Service Type
               th Time 
               th Date 
-              th Service Fee
+              th Parking Fee
+              th Battery Price
+              th Tyre Price 
               th Admin Actions
           tbody
               if registrations.length 
@@ -100,6 +97,8 @@ head
                 td #{registration.arrivaltime} 
                 td #{registration.date} 
                 td #{registration.servicefee} 
+                td #{registration.batteryprice}
+                td #{registration.tyreprice}
                 td
                   a(href='/update/'+registration._id)
                     button.namugga(title='Edit')
