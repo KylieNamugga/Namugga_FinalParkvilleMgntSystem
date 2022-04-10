@@ -11,8 +11,7 @@ router.get('/dashboard', async (req, res) => {
 
     // Accumulating total Price for different sections
     let totalParking = await Registration.aggregate([
-      { $group: { _id: '$all', totalParking: { $sum: '$servicefee' } } }
-    ]);
+      {$group: {_id:'$all',totalParking:{$sum:'$servicefee'}}}]);
 
     // let totalTyrePrice = await Registration.aggregate([
     //   {$group:{_id:'$any', totalTyrePrice:{ $sum:'$tyreprice'}}}
@@ -25,8 +24,8 @@ router.get('/dashboard', async (req, res) => {
 
     // give me the file dashboard and come with the registration data.
     res.render('dashboard', {
-      registrations: data,
-      total: totalParking[0],
+      registrations: data, 
+      total:totalParking[0],
       // total:totalTyrePrice[0],
       // total:totalBatteryPrice[0],
     })

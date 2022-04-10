@@ -37,17 +37,17 @@ head
   .col-div-4-1
     .box
       p.head-1 Parking
-      p #{new Intl.NumberFormat().format(total.totalParking)}Ugx 
+      p #{new Intl.NumberFormat().format(total.totalParking)} Ugx      
       i.fa.fa-car.box-icon
   .col-div-4-1
     .box
       p.head-1 Tyres
-      p #{new Intl.NumberFormat().format(total.totalTyrePrice)}Ugx 
+      //- p #{new Intl.NumberFormat().format(total.totalTyrePrice)}Ugx 
       i.fa.fa-life-ring.box-icon
   .col-div-4-1
     .box
       p.head-1 Battery
-      p #{new Intl.NumberFormat().format(total.totalBatteryPrice)}Ugx 
+      //- p #{new Intl.NumberFormat().format(total.totalBatteryPrice)}Ugx 
 
       i.fa.fa-plus-square.box-icon
   .clearfix
@@ -62,18 +62,18 @@ head
     #box2.box-1
       .content-box-1
         p.head-1
-          | Top Performer
-          span 3/11/2021
+          | Total Income
+          span 12/04/2022
           
         div
-          span#money Ugx 0   
+          span#money UGX  
   .clearfix
   br
   // My table
   .col-div-12
     .box-8
       .content-box
-        p Customer Details Table
+        p CUSTOMER DETAILS TABLE
         br
         table
           thead
@@ -82,7 +82,7 @@ head
               th Number Plate
               th Service Type
               th Time 
-              th Date 
+              //- th Date 
               th Parking Fee
               th Battery Price
               th Tyre Price 
@@ -95,7 +95,7 @@ head
                 td #{registration.numberplate}
                 td #{registration.service}
                 td #{registration.arrivaltime} 
-                td #{registration.date} 
+                //- td #{registration.date} 
                 td #{registration.servicefee} 
                 td #{registration.batteryprice}
                 td #{registration.tyreprice}

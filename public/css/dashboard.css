@@ -279,18 +279,16 @@ table {
   color: black;
 }
 
-td,
-th {
-  border: 1px solid #dddddd;
+td,th {
+  border: 2px solid #dddddd;
   text-align: left;
-  padding: 10px;
+  padding: 6px;
 }
 
 #money{
   font-size: xx-large;
   font-weight: bold;
   margin-left: 25%;
-  /* margin-top: 80%; */
   text-align: center;
 }
 
@@ -332,7 +330,6 @@ th {
   float: left;
   margin-right: 70px;
   background-color:red;
-  /* color:white; */
   border: none;
   font-size: 20px;
   margin-right: 2px;
