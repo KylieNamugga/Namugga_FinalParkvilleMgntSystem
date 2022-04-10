@@ -4,16 +4,13 @@ const validateSignUp = () => {
     var lastname = document.getElementById('lastname');
     var email = document.getElementById('email');
     var password = document.getElementById('password');
-    var pass = document.getElementById('pass');
 
     // validation errors in small tag
     const fNameError = document.getElementById("fNameError");
     const lNameError = document.getElementById("lNameError");
     const emailError = document.getElementById("emailError");
     const passwordError = document.getElementById("passwordError");
-    const passError = document.getElementById("passError");
 
-    // Namugga, why are you struggling with validation bambi? 
 
     // name should not be empty
     if (firstname.value == '') {
@@ -31,10 +28,10 @@ const validateSignUp = () => {
             return false
             // name should be these characters
         } else {
-            const fNamelengthRegex = /^[A-Z][a-z]{4,10}$/
+            const fNamelengthRegex = /^[A-Z][a-z]{2,10}$/
             if (fNamelengthRegex.test(firstname.value) === false) {
                 firstname.style.border = '1px solid red';
-                fNameError.innerHTML = "first name should be 5-10 characters";
+                fNameError.innerHTML = "first name should be 3-10 characters";
                 fNameError.style = 'color:red; font-family:Arial, Helvetica, Sans-serif;';
                 return false
             }
@@ -42,7 +39,7 @@ const validateSignUp = () => {
 
 
     }
-    
+
     // last name validation (Kylie)
     if (lastname.value == '') {
         lastname.style.border = '1px solid red';
@@ -59,7 +56,7 @@ const validateSignUp = () => {
             return false
             // name should be these characters
         } else {
-            const lNamelengthRegex = /^[A-Z][a-z]{5,10}$/
+            const lNamelengthRegex = /^[A-Z][a-z]{2,10}$/
             if (lNamelengthRegex.test(lastname.value) === false) {
                 lastname.style.border = '1px solid red';
                 lNameError.innerHTML = "first name should be 5-10 characters";
@@ -88,34 +85,19 @@ const validateSignUp = () => {
         };
     }
 
-    //    validating confirm password
-    const passRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).*$/
-    if (pass.value != '' && pass.value.match(passRegex)) {
-    }
-    else {
-        // password != pass
-        pass.style.border = '1px solid red';
-        passError.innerHTML = 'Passwords do not match:'
-        passError.style = 'color:red; font-family:Arial, Helvetica, Sans-serif;'
-        return false
-    }
-
-    //validating password
+    // validating password
     // Minimum eight characters, at least one uppercase letter, one lowercase letter and one number:
-    const passwordRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).*$/
-    console.log('password', password, 'pass', pass)
 
+    const passwordRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).*$/
     if (password.value != '' && password.value.match(passwordRegex)) {
-        return true;
+
     }
     else {
         password.style.border = '1px solid red';
         passwordError.innerHTML = 'Please provide password of Minimum eight characters,atleast 1 uppercase,1 lowercase and 1 number:'
         passwordError.style = 'color:red; font-family:Arial, Helvetica, Sans-serif;'
-
         return false
     }
-
 
 }
 

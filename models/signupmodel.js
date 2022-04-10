@@ -1,28 +1,27 @@
-// require mongoose
+// Require mongoose
 const mongoose = require('mongoose')
-// this helps us capture our user name.
+// This helps us capture our user name.
 const passportLocalmongoose = require('passport-local-mongoose')
 
-// create schema
+// Create schema
 const signupSchema = mongoose.Schema({
     firstname: {
         type: String,
         required: true
     },
-    // the example above means data is a string and it's required
+    //The example above means data is a string and it's required
 
     lastname: {
         type: String,
         required: true
     },
- 
+
     email: {
         type: String,
         required: true,
         unique: true
     },
 
-    //   commenting out so that password doesn't appear in database
     password: {
         type: String,
         required: true
