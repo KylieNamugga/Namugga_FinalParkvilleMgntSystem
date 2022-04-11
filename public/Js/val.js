@@ -51,18 +51,15 @@ const regValidation = () => {
         phonenumberError.style = 'color:red; font-family:Arial, Helvetica, Sans-serif;';
         return false
     } else {
-        // const phonenumberRegex = /^[A-Z][a-z]{3,10}$/
-        //     if (phonenumberRegex.test(phonenumber.value) === false) {
-        //         phonenumber.style.border = '1px solid red';
-        //         phonenumberError.innerHTML = "Valid UG number +256";
-        //         phonenumberError.style = 'color:red; font-family:Arial, Helvetica, Sans-serif;';
-        //         return false
-        //     }
+        const phonenumberRegex = /^\d{10}$/
+        if (phonenumberRegex.test(phonenumber.value) === false) {
+            phonenumber.style.border = '1px solid red';
+            phonenumberError.innerHTML = "Please provide a valid UG number with 10 Numbers";
+            phonenumberError.style = 'color:red; font-family:Arial, Helvetica, Sans-serif;';
+            return false
+        }
         phonenumber.style.border = "1px solid green"
     }
-
-
-
     // NIN VALIDATION
     if (nin.value == "") {
         nin.style.border = "1px solid red"
@@ -70,14 +67,14 @@ const regValidation = () => {
         ninError.style = 'color:red; font-family:Arial, Helvetica, Sans-serif;';
         return false
     } else {
-        const ninRegex = /^[A-Z][a-z]{3,10}$/
-            // if (ninRegex.test(nin.value) === false) {
-            //     nin.style.border = '1px solid red';
-            //     ninError.innerHTML = "please provide valid UG NIN with alphanumeric characters";
-            //     ninError.style = 'color:red; font-family:Arial, Helvetica, Sans-serif;';
-            //     return false
-            // }
-        nin.style.border = "1px solid greeen"
+        const ninRegex = /^[0-9A-Z]{14}$/
+        if (ninRegex.test(nin.value) === false) {
+            nin.style.border = '1px solid red';
+            ninError.innerHTML = "please provide valid UG NIN with 14 Alphanumeric Characters";
+            ninError.style = 'color:red; font-family:Arial, Helvetica, Sans-serif;';
+            return false
+        }
+        nin.style.border = "1px solid green"
     }
 
     // NUMBER PLATE VALIDATION
@@ -87,13 +84,13 @@ const regValidation = () => {
         numberplateError.style = 'color:red; font-family:Arial, Helvetica, Sans-serif;';
         return false
     } else {
-        const numberplateRegex = /^[A-Z][a-z]{3,10}$/
-            // if (numberplateRegex.test(numberplate.value) === false) {
-            //     numberplate.style.border = '1px solid red';
-            //     numberplateError.innerHTML = "first name should be 5-10 characters";
-            //     numberplateError.style = 'color:red; font-family:Arial, Helvetica, Sans-serif;';
-            //     return false
-            // }
+        const numberplateRegex = /^[A-Z]{7}$/
+        if (numberplateRegex.test(numberplate.value) === false) {
+            numberplate.style.border = '1px solid red';
+            numberplateError.innerHTML = "Please provide Valid Number Plate with 7 Alpha Numeric Characters";
+            numberplateError.style = 'color:red; font-family:Arial, Helvetica, Sans-serif;';
+            return false
+        }
         numberplate.style.border = "1px solid green"
     }
 

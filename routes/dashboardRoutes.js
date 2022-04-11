@@ -10,24 +10,26 @@ router.get('/dashboard', async (req, res) => {
     const data = await Registration.find({}).sort({ $natural: -1 });
 
     // Accumulating total Price for different sections
-    let totalParking = await Registration.aggregate([
-      {$group: {_id:'$all',totalParking:{$sum:'$servicefee'}}}]);
+    // Total earnings is an array that has different totals earned from parking.
+    let totalEarnings = await Registration.aggregate([
+      {$group: {_id:'$all',
+      totalParking:{$sum:'$servicefee'},
+      totalTyrePrice:{$sum:'$tyreprice'},
+      // these values are being picked from the same collection total earnings.
+      totalBatteryPrice:{$sum:'$batteryprice'},
 
-    // let totalTyrePrice = await Registration.aggregate([
-    //   {$group:{_id:'$any', totalTyrePrice:{ $sum:'$tyreprice'}}}
-    // ]);
+    }}]);
 
-    // let totalBatteryPrice = await Registration.aggregate([
-    //   {$group:{_id:'$many', totalBatteryPrice:{ $sum:'$batteryprice'}}}
-    // ]);
+   
+    
 
-
+console.log('This is our collection of all earnings', totalEarnings);
     // give me the file dashboard and come with the registration data.
     res.render('dashboard', {
       registrations: data, 
-      total:totalParking[0],
-      // total:totalTyrePrice[0],
-      // total:totalBatteryPrice[0],
+      total:totalEarnings[0],
+
+      
     })
   } catch (error) {
     return res.status(400).send(
