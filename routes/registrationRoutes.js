@@ -38,7 +38,7 @@ router.post('/registration', (req, res) => {
     if (errors) {
         res.render('registration')
     }
-
+// matching my inputs to my schema
     else {
         let newRegistration = new Registration({
             fullname: fullname,
@@ -59,7 +59,7 @@ router.post('/registration', (req, res) => {
             tyresize: tyresize
 
         });
-        // Saving
+        // Saving registration data
         newRegistration.save((err) => {
             if (err) {
                 console.error(err);

@@ -11,22 +11,21 @@ router.get('/dashboard', async (req, res) => {
 
     // Accumulating total Price for different sections
     // Total earnings is an array that has different totals earned from parking.
+    // These values are being picked from the same collection total earnings.
+
     let totalEarnings = await Registration.aggregate([
       {$group: {_id:'$all',
       totalParking:{$sum:'$servicefee'},
       totalTyrePrice:{$sum:'$tyreprice'},
-      // these values are being picked from the same collection total earnings.
       totalBatteryPrice:{$sum:'$batteryprice'},
 
     }}]);
 
-   
-    
-
-console.log('This is our collection of all earnings', totalEarnings);
+    console.log('This is our collection of all earnings', totalEarnings);
     // give me the file dashboard and come with the registration data.
     res.render('dashboard', {
       registrations: data, 
+      // accessing my earnings
       total:totalEarnings[0],
 
       
@@ -41,7 +40,7 @@ console.log('This is our collection of all earnings', totalEarnings);
   }
 });
 
-// Deleting Client
+// Deleting Client Record  
 router.get('/deleteuser/:id', async (req, res) => {
   try {
     await Registration.deleteOne({ _id: req.params.id })
@@ -53,6 +52,7 @@ router.get('/deleteuser/:id', async (req, res) => {
 });
 
 //Updating Client Info
+// we pick information from the database first through the get route
 router.get("/update/:id", async (req, res) => {
   try {
     const updateUser = await Registration.findOne({ _id: req.params.id })
@@ -62,6 +62,7 @@ router.get("/update/:id", async (req, res) => {
   }
 });
 
+// we re-post information through the post route
 router.post("/update/", async (req, res) => {
   try {
     const updated = await Registration.findOneAndUpdate({ _id: req.query.id }, req.body)

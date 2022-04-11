@@ -1,6 +1,6 @@
 // Require mongoose
 const mongoose = require('mongoose')
-// This helps us capture our user name.
+// Kylie, this helps us capture our user name.
 const passportLocalmongoose = require('passport-local-mongoose')
 
 // Create schema
@@ -28,7 +28,7 @@ const signupSchema = mongoose.Schema({
     },
 
 })
-// our username is the email,we set it like this because it's not the default
+// our "username" is the email, we set it like this because it's not the default
 signupSchema.plugin(passportLocalmongoose, {
     usernameField: "email",
 });

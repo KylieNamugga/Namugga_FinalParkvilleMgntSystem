@@ -84,13 +84,13 @@ const regValidation = () => {
         numberplateError.style = 'color:red; font-family:Arial, Helvetica, Sans-serif;';
         return false
     } else {
-        const numberplateRegex = /^[A-Z]{7}$/
+        const numberplateRegex = /^[0-9A-Z]{7}$/
         if (numberplateRegex.test(numberplate.value) === false) {
             numberplate.style.border = '1px solid red';
             numberplateError.innerHTML = "Please provide Valid Number Plate with 7 Alpha Numeric Characters";
             numberplateError.style = 'color:red; font-family:Arial, Helvetica, Sans-serif;';
             return false
-        }
+        }else
         numberplate.style.border = "1px solid green"
     }
 

@@ -43,7 +43,7 @@ router.post('/signoff', (req, res) => {
             gender: gender,
 
         });
-        // Saving
+        // Saving the signed off car
         newSignoff.save((err) => {
             if (err) {
                 console.error(err);
