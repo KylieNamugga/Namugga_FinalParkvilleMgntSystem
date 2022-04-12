@@ -43,7 +43,7 @@ db.on('error', (err)=>{
 console.error(err);
 });+
 
-// Setting up the view engine
+// Setting up the view engine. Pug is our view engine
 app.engine('pug', require('pug').__express);
 app.set('view engine', 'pug')
 app.set('views', path.join(__dirname,'views')); 
@@ -64,10 +64,14 @@ app.use(expressSession);
 app.use(passport.initialize());
 // this creates a session when initialisation has taken place
 app.use(passport.session());
+// this is for logging in
 app.use(cors())
 
+// 
 passport.use(Signup.createStrategy());
+// This gives a serial number when I log in so that the system knows my ID
 passport.serializeUser(Signup.serializeUser());
+// This helps forget the serial number when you log out.
 passport.deserializeUser(Signup.deserializeUser());
 
 
@@ -77,9 +81,9 @@ app.use(function (req, res, next) {
   res.locals.messages = require('express-messages')(req, res);
   next();
 });
+// Why am I failing to make my flush messages work?
 
-
-// use imported routes
+// using my imported routes
 app.use('/', homeRoutes);
 app.use('/', loginRoutes);
 app.use('/', registrationRoutes);

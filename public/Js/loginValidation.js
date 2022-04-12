@@ -20,7 +20,9 @@ const validateLogIn = () => {
             emailError.innerHTML = "Please provide a valid email";
             emailError.style = 'color:red; font-family:Arial, Helvetica, Sans-serif;';
             return false
-        };
+        }else{
+            emailError.textContent = ""
+        }
     }
 
     if (password.value == '') {
@@ -35,6 +37,8 @@ const validateLogIn = () => {
             passwordError.innerHTML = 'Password of min 8 characters,1 uppercase,1 lowercase and 1 number'
             passwordError.style = 'color:red; font-family:Arial, Helvetica, Sans-serif;';
             return false
-        };
+        }else{
+            passwordError.textContent = ""
+        }
     }
 }

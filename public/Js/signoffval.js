@@ -26,6 +26,7 @@ const signOffVal = () => {
         return false
     } else {
         fullname.style.border = "1px solid green"
+        fullnameError.textContent = ""
     }
 
     // PHONENUMBER VALIDATION
@@ -36,6 +37,7 @@ const signOffVal = () => {
         return false
     } else {
         phonenumber.style.border = "1px solid green"
+        phonenumberError.textContent = ""
     }
 
     // NIN VALIDATION
@@ -46,6 +48,7 @@ const signOffVal = () => {
         return false
     } else {
         nin.style.border = "1px solid green"
+        ninError.textContent = ""
     }
 
     // VEHICLE TYPE VALIDATION
@@ -56,6 +59,7 @@ const signOffVal = () => {
         return false
     } else {
         vehicletype.style.border = "1px solid green"
+        vehicletypeError.textContent = ""
     }
 
 
@@ -67,6 +71,7 @@ const signOffVal = () => {
         return false
     } else {
         date.style.border = "1px solid green"
+        dateError.textContent = ""
     }
     // RECEIPT VALIDATION
     if (receipt.value == '') {
@@ -76,6 +81,7 @@ const signOffVal = () => {
         return false
     } else {
         receipt.style.border = "1px solid green"
+        receiptnumberError.textContent = ""
     }
     // TIME VALIDATION
     if (time.value == '') {
@@ -85,6 +91,7 @@ const signOffVal = () => {
         return false
     } else {
         time.style.border = "1px solid green"
+        timeError.textContent = ""
     }
     // GENDER VALIDATION
     if (gender.value == "Default") {
@@ -94,6 +101,7 @@ const signOffVal = () => {
         return false
     } else {
         gender.style.border = "1px solid green"
+        genderError.textContent = ""
     }
 
 }

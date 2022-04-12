@@ -42,6 +42,7 @@ const regValidation = () => {
         return false
     } else {
         fullname.style.border = "1px solid green"
+        fullnameError.textContent = ""
     }
 
     // PHONE NUMBER VALIDATION
@@ -57,8 +58,10 @@ const regValidation = () => {
             phonenumberError.innerHTML = "Please provide a valid UG number with 10 Numbers";
             phonenumberError.style = 'color:red; font-family:Arial, Helvetica, Sans-serif;';
             return false
-        }
+        }else{
         phonenumber.style.border = "1px solid green"
+        phonenumberError.textContent = ""
+    }
     }
     // NIN VALIDATION
     if (nin.value == "") {
@@ -67,14 +70,16 @@ const regValidation = () => {
         ninError.style = 'color:red; font-family:Arial, Helvetica, Sans-serif;';
         return false
     } else {
-        const ninRegex = /^[0-9A-Z]{14}$/
+        const ninRegex = /^[C][A-Z]{1}[0-9A-Z]{12}$/
         if (ninRegex.test(nin.value) === false) {
             nin.style.border = '1px solid red';
             ninError.innerHTML = "please provide valid UG NIN with 14 Alphanumeric Characters";
             ninError.style = 'color:red; font-family:Arial, Helvetica, Sans-serif;';
             return false
-        }
+        }else{
         nin.style.border = "1px solid green"
+        ninError.textContent = ""
+    }
     }
 
     // NUMBER PLATE VALIDATION
@@ -84,14 +89,16 @@ const regValidation = () => {
         numberplateError.style = 'color:red; font-family:Arial, Helvetica, Sans-serif;';
         return false
     } else {
-        const numberplateRegex = /^[0-9A-Z]{7}$/
+        const numberplateRegex = /^[U][A-Z]{2}[0-9A-Z]{4}$/
         if (numberplateRegex.test(numberplate.value) === false) {
             numberplate.style.border = '1px solid red';
             numberplateError.innerHTML = "Please provide Valid Number Plate with 7 Alpha Numeric Characters";
             numberplateError.style = 'color:red; font-family:Arial, Helvetica, Sans-serif;';
             return false
-        }else
+        }else{
         numberplate.style.border = "1px solid green"
+        numberplateError.textContent = ""
+    }
     }
 
     // VEHICLE TYPE
@@ -102,6 +109,7 @@ const regValidation = () => {
         return false
     } else {
         vehicletype.style.border = "1px solid green"
+        vehicletypeError.textContent = ""
     }
 
     // SERVICE TYPE VALIDATION
@@ -112,6 +120,7 @@ const regValidation = () => {
         return false
     } else {
         service.style.border = "1px solid green"
+        serviceError.textContent = ""
     }
 
     // PARKING FEE VALIDATION
@@ -122,6 +131,7 @@ const regValidation = () => {
         return false
     } else {
         servicefee.style.border = "1px solid green"
+        servicefeeError.textContent = ""
 
     }
 
@@ -134,6 +144,7 @@ const regValidation = () => {
 
     } else {
         vehiclemodel.style.border = "1px solid green"
+        vehiclemodelError.textContent = ""
 
     }
 
@@ -146,6 +157,7 @@ const regValidation = () => {
 
     } else {
         colour.style.border = "1px solid green"
+        colourError.textContent = ""
     }
 
     // DATE VALIDATION
@@ -157,6 +169,7 @@ const regValidation = () => {
 
     } else {
         date.style.border = "1px solid green"
+        dateError.textContent = ""
     }
 
     // ARRIVAL TIME VALIDATION
@@ -168,6 +181,7 @@ const regValidation = () => {
 
     } else {
         time.style.border = "1px solid green"
+        timeError.textContent = ""
     }
 
     // GENDER
@@ -178,6 +192,7 @@ const regValidation = () => {
         return false
     } else {
         gender.style.border = "1px solid green"
+        genderError.textContent = ""
 
     }
 
@@ -189,6 +204,7 @@ const regValidation = () => {
         return false
     } else {
         batteryprice.style.border = "1px solid green"
+        batterypriceError.textContent = ""
 
     }
 
@@ -200,6 +216,7 @@ const regValidation = () => {
         return false
     } else {
         batterysize.style.border = "1px solid green"
+        batterysizeError.textContent = ""
     }
 
     // TYRE PRICE
@@ -210,6 +227,7 @@ const regValidation = () => {
         return false
     } else {
         tyreprice.style.border = "1px solid green"
+        tyrepriceError.textContent = ""
     }
 
     // TYRE SIZE
@@ -220,5 +238,6 @@ const regValidation = () => {
         return false
     } else {
         tyresize.style.border = "1px solid green"
+        tyresizeError.textContent = ""
     }
 };
